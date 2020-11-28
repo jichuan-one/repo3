@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="testTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://cmx.caimeixian.cn:3306/shangma?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true&amp;serverTimezone=GMT%2B8&amp;useSSL=false"
+                        userId="root"
+                        password="raomao">
+
+        </jdbcConnection>
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+            NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- targetProject:生成PO类的位置 -->
+        <javaModelGenerator targetPackage="com.demo1.pojo"
+                            targetProject="GeneratorSqlMap/src">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="com.demo1.mapper"
+                         targetProject="GeneratorSqlMap/src">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.demo1.mapper"
+                             targetProject="GeneratorSqlMap/src">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        <!-- 指定数据库表 -->
+        <!--  business
+         business_detail
+         customer
+         customer_money
+         customer_product
+         customer_quota
+         feedback
+         group
+         journal_account
+         order
+         order_specific
+         pay_mode
+         product
+         product_classify
+         promote
+         promote_group
+         promote_zone
+         purchase
+         received_addr
+         recharge
+         refund
+         specific
+         specific_customer
+         specific_group
+         staff_log
+         staff_menu
+         staff_role
+         staff_role_menu
+         staff_user
+         staff_user_role
+         stocktake
+         stocktake_product
+         store_input
+         store_io
+         store_output
+         supplier
+         supplier_purchase
+         supplier_purchase_product
+         sys_log
+         sys_menu
+         sys_role
+         sys_role_menu
+         sys_user
+         sys_user_role
+         turnover
+         turnover_log
+         turnover_product
+         unit
+         zone **/-->
+
+        <table schema="" tableName="stocktake"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+        <table schema="" tableName="stocktake_product"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false"/>
+
+
+     </context>
+ </generatorConfiguration>
